@@ -19103,14 +19103,20 @@ bldg:VAV2-5.DPRPOS a brick:Damper_Position_Sensor ;
 
 bldg:Room-L2-410 a brick:Room ;
 	brick:isPartOf bldg:VAV2-5Zone ;
+    brick:latitude 1.26475309;
+    brick:longitude 103.81836290;        
 	brick:isLocationOf bldg:Level-2 .
 
 bldg:Room-L2-411 a brick:Room ;
 	brick:isPartOf bldg:VAV2-4Zone ;
+    brick:latitude 1.2638509;
+    brick:longitude 103.8179590;      
 	brick:isLocationOf bldg:Level-2 .
 
 bldg:Room-L2-412 a brick:Room ;
 	brick:isPartOf bldg:VAV2-3Zone ;
+    brick:latitude 1.2659709;
+    brick:longitude 103.818634290;     
 	brick:isLocationOf bldg:Level-2 .
 
 bldg:air_temp_sensor_2410 a brick:Air_Temperature_Sensor ;
