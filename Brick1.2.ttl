@@ -19029,6 +19029,8 @@ brick:Window a owl:Class ;
 
 bldg:Room-L2-410-W01-SENSOR a brick:Window_Position_Sensor ;
 	brick:value 0;
+    brick:latitude 1.2648809;
+    brick:longitude 103.8182290;
 	brick:isPointOf bldg:Room-L2-410 .
 bldg:Room-L2-410-W01 a brick:Window ;
 	brick:isPartOf bldg:Room-L2-410 ;
@@ -19036,6 +19038,8 @@ bldg:Room-L2-410-W01 a brick:Window ;
 
 bldg:Room-L2-411-W01-SENSOR a brick:Window_Position_Sensor ;
 	brick:value 0;
+    brick:latitude 1.2638809;
+    brick:longitude 103.8179290;    
 	brick:isPointOf bldg:Room-L2-411 .
 bldg:Room-L2-411-W01 a brick:Window ;
 	brick:isPartOf bldg:Room-L2-411 ;
@@ -19043,6 +19047,8 @@ bldg:Room-L2-411-W01 a brick:Window ;
 	
 bldg:Room-L2-412-W01-SENSOR a brick:Window_Position_Sensor ;
 	brick:value 63;
+    brick:latitude 1.2658809;
+    brick:longitude 103.81844290;       
 	brick:isPointOf bldg:Room-L2-412 .
 bldg:Room-L2-412-W01 a brick:Window ;
 	brick:isPartOf bldg:Room-L2-412 ;
@@ -19110,6 +19116,8 @@ bldg:Room-L2-412 a brick:Room ;
 bldg:air_temp_sensor_2410 a brick:Air_Temperature_Sensor ;
 	brick:hasUnit unit:DEG_C ;
 	brick:value 25.5;
+    brick:latitude 1.26477809;
+    brick:longitude 103.81833290;    
     brick:isPointOf bldg:VAV2-5 .
 	
 bldg:co2_sensor_2410 a brick:CO2_Level_Sensor ;
@@ -19121,6 +19129,8 @@ bldg:co2_sensor_2410 a brick:CO2_Level_Sensor ;
 bldg:air_temp_sensor_2411 a brick:Air_Temperature_Sensor ;
 	brick:hasUnit unit:DEG_C ;
 	brick:value 30.7;
+    brick:latitude 1.2638209;
+    brick:longitude 103.8179190;       
     brick:isPointOf bldg:VAV2-4 .
 	
 bldg:co2_sensor_2411 a brick:CO2_Level_Sensor ;
@@ -19131,6 +19141,8 @@ bldg:co2_sensor_2411 a brick:CO2_Level_Sensor ;
 bldg:air_temp_sensor_2412 a brick:Air_Temperature_Sensor ;
 	brick:hasUnit unit:DEG_C ;
 	brick:value 29.2;
+    brick:latitude 1.2659509;
+    brick:longitude 103.818664290;      
     brick:isPointOf bldg:VAV2-3 .
 	
 bldg:co2_sensor_2412 a brick:CO2_Level_Sensor ;
