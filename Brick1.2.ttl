@@ -19004,11 +19004,9 @@ _:has_Point a owl:Restriction ;
 
 
 
-# Below extend from Brick Schema 1.2 for K6307 project 1
 
-@prefix bldg: <http://wkwsci.ntu.edu.sg/K6307/ourbuilding#> .
+@prefix bldg: <http://t/building#> .
 
-# K6307 Window Class
 brick:Window_Position_Sensor a owl:Class ;
     rdfs:subClassOf [ a owl:Class ;
             owl:intersectionOf ( _:has_Point _:has_Position _:has_Sensor ) ],
@@ -19029,7 +19027,6 @@ brick:Window a owl:Class ;
         tag:Window,
         tag:Fresh .
 
-# K6307 Window instance
 bldg:Room-L2-410-W01-SENSOR a brick:Window_Position_Sensor ;
 	brick:value 0;
 	brick:isPointOf bldg:Room-L2-410 .
@@ -19051,13 +19048,11 @@ bldg:Room-L2-412-W01 a brick:Window ;
 	brick:isPartOf bldg:Room-L2-412 ;
 	brick:hasPoint bldg:Room-L2-412-W01-SENSOR .
 	
-# K6307 AHU instance
 bldg:AHU1A a brick:Air_Handler_Unit ;
     brick:feeds bldg:VAV2-3,
         bldg:VAV2-4,
 		bldg:VAV2-5 .
 
-# K6307 VAV2-3
 bldg:VAV2-3 a brick:Variable_Air_Volume_Box ;
     brick:hasPart bldg:VAV2-3.DPR ;
 	brick:feeds bldg:VAV2-3Zone .
@@ -19072,7 +19067,6 @@ bldg:VAV2-3.DPRPOS a brick:Damper_Position_Sensor  ;
 bldg:VAV2-3Zone a brick:HVAC_Zone ;
     brick:hasPart bldg:Room-L2-412 .
 
-# K6307 VAV2-4
 bldg:VAV2-4 a brick:Variable_Air_Volume_Box ;
     brick:hasPart bldg:VAV2-4.DPR ;
 	brick:feeds bldg:VAV2-4Zone .
@@ -19087,7 +19081,6 @@ bldg:VAV2-4.DPR a brick:Damper ;
 bldg:VAV2-4.DPRPOS a brick:Damper_Position_Sensor ;
 	brick:value 20 .
 
-# K6307 VAV2-5
 bldg:VAV2-5 a brick:Variable_Air_Volume_Box ;
     brick:hasPart bldg:VAV2-5.DPR ;
 	brick:feeds bldg:VAV2-5Zone .
@@ -19102,7 +19095,6 @@ bldg:VAV2-5.DPR a brick:Damper ;
 bldg:VAV2-5.DPRPOS a brick:Damper_Position_Sensor ;
 	brick:value 55 .
 
-# K6307 Room instance
 bldg:Room-L2-410 a brick:Room ;
 	brick:isPartOf bldg:VAV2-5Zone ;
 	brick:isLocationOf bldg:Level-2 .
@@ -19115,7 +19107,6 @@ bldg:Room-L2-412 a brick:Room ;
 	brick:isPartOf bldg:VAV2-3Zone ;
 	brick:isLocationOf bldg:Level-2 .
 
-# K6307 Sensors
 bldg:air_temp_sensor_2410 a brick:Air_Temperature_Sensor ;
 	brick:hasUnit unit:DEG_C ;
 	brick:value 25.5;
