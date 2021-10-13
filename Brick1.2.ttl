@@ -19007,6 +19007,7 @@ _:has_Point a owl:Restriction ;
 
 @prefix bldg: <http://t/building#> .
 
+# New type of resource
 brick:Window_Position_Sensor a owl:Class ;
     rdfs:subClassOf [ a owl:Class ;
             owl:intersectionOf ( _:has_Point _:has_Position _:has_Sensor ) ],
@@ -19017,148 +19018,566 @@ brick:Window_Position_Sensor a owl:Class ;
         tag:Position,
         tag:Sensor .
 
-brick:Window a owl:Class ;
+brick:Smart_Window a owl:Class ;
     rdfs:subClassOf [ a owl:Class ;
             owl:intersectionOf ( _:has_Equipment _:has_Fresh _:has_Air ) ],
         brick:Equipment ;
-    skos:definition "Window open or close supplied fresh air impacts indoor air quality"@en ;
+    skos:definition "Smart Window open or close supplied fresh air impacts indoor air quality"@en ;
     brick:hasAssociatedTag tag:Air,
         tag:Equipment,
         tag:Window,
         tag:Fresh .
 
-bldg:Room-L2-410-W01-SENSOR a brick:Window_Position_Sensor ;
+brick:Indoor_Air_Quality_Device a owl:Class ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( _:has_Equipment _:has_Variable ) ],
+        brick:Equipment ;
+    skos:definition "A indoor air quality monitoring device"@en ;
+    brick:hasAssociatedTag tag:Box,
+        tag:Equipment,
+        tag:IAQ.
+
+# Window instances for L2
+bldg:SG_HQ_Room-L2-410-W01-SENSOR a brick:Window_Position_Sensor ;
 	brick:value 0;
     brick:latitude 1.2648809;
     brick:longitude 103.8182290;
-	brick:isPointOf bldg:Room-L2-410 .
-bldg:Room-L2-410-W01 a brick:Window ;
-	brick:isPartOf bldg:Room-L2-410 ;
-	brick:hasPoint bldg:Room-L2-410-W01-SENSOR .
+	brick:isPointOf bldg:SG_HQ_Room-L2-410 .
+bldg:SG_HQ_Room-L2-410-W01 a brick:Window ;
+	brick:isPartOf bldg:SG_HQ_Room-L2-410 ;
+	brick:hasPoint bldg:SG_HQ_Room-L2-410-W01-SENSOR .
 
-bldg:Room-L2-411-W01-SENSOR a brick:Window_Position_Sensor ;
+bldg:SG_HQ_Room-L2-411-W01-SENSOR a brick:Window_Position_Sensor ;
 	brick:value 0;
     brick:latitude 1.2638809;
     brick:longitude 103.8179290;    
-	brick:isPointOf bldg:Room-L2-411 .
-bldg:Room-L2-411-W01 a brick:Window ;
-	brick:isPartOf bldg:Room-L2-411 ;
-	brick:hasPoint bldg:Room-L2-411-W01-SENSOR .
+	brick:isPointOf bldg:SG_HQ_Room-L2-411 .
+bldg:SG_HQ_Room-L2-411-W01 a brick:Window ;
+	brick:isPartOf bldg:SG_HQ_Room-L2-411 ;
+	brick:hasPoint bldg:SG_HQ_Room-L2-411-W01-SENSOR .
 	
-bldg:Room-L2-412-W01-SENSOR a brick:Window_Position_Sensor ;
+bldg:SG_HQ_Room-L2-412-W01-SENSOR a brick:Window_Position_Sensor ;
 	brick:value 63;
     brick:latitude 1.2658809;
     brick:longitude 103.81844290;       
-	brick:isPointOf bldg:Room-L2-412 .
-bldg:Room-L2-412-W01 a brick:Window ;
-	brick:isPartOf bldg:Room-L2-412 ;
-	brick:hasPoint bldg:Room-L2-412-W01-SENSOR .
-	
-bldg:AHU1A a brick:Air_Handler_Unit ;
-    brick:feeds bldg:VAV2-3,
-        bldg:VAV2-4,
-		bldg:VAV2-5 .
+	brick:isPointOf bldg:SG_HQ_Room-L2-412 .
+bldg:SG_HQ_Room-L2-412-W01 a brick:Window ;
+	brick:isPartOf bldg:SG_HQ_Room-L2-412 ;
+	brick:hasPoint bldg:SG_HQ_Room-L2-412-W01-SENSOR .
 
-bldg:VAV2-3 a brick:Variable_Air_Volume_Box ;
-    brick:hasPart bldg:VAV2-3.DPR ;
-	brick:feeds bldg:VAV2-3Zone .
+# LEVEL 2 HVAC instances
+bldg:SG_HQ_AHU1A a brick:Air_Handler_Unit ;
+    brick:feeds bldg:SG_HQ_VAV2-3,
+        bldg:SG_HQ_VAV2-4,
+		bldg:SG_HQ_VAV2-5 .
 
-bldg:VAV2-3.DPR a brick:Damper ;
-	brick:feeds bldg:VAV2-3Zone ;
-    brick:hasPoint bldg:VAV2-3.DPRPOS .
+bldg:SG_HQ_VAV2-3 a brick:Variable_Air_Volume_Box ;
+    brick:hasPart bldg:SG_HQ_VAV2-3.DPR ;
+	brick:feeds bldg:SG_HQ_VAV2-3Zone .
 
-bldg:VAV2-3.DPRPOS a brick:Damper_Position_Sensor  ;
+bldg:SG_HQ_VAV2-3.DPR a brick:Damper ;
+	brick:feeds bldg:SG_HQ_VAV2-3Zone ;
+    brick:hasPoint bldg:SG_HQ_VAV2-3.DPRPOS .
+
+bldg:SG_HQ_VAV2-3.DPRPOS a brick:Damper_Position_Sensor  ;
 	brick:value 100 .
 
-bldg:VAV2-3Zone a brick:HVAC_Zone ;
-    brick:hasPart bldg:Room-L2-412 .
+bldg:SG_HQ_VAV2-3Zone a brick:HVAC_Zone ;
+    brick:hasPart bldg:SG_HQ_Room-L2-412 .
 
-bldg:VAV2-4 a brick:Variable_Air_Volume_Box ;
-    brick:hasPart bldg:VAV2-4.DPR ;
-	brick:feeds bldg:VAV2-4Zone .
+bldg:SG_HQ_VAV2-4 a brick:Variable_Air_Volume_Box ;
+    brick:hasPart bldg:SG_HQ_VAV2-4.DPR ;
+	brick:feeds bldg:SG_HQ_VAV2-4Zone .
 		
-bldg:VAV2-4Zone a brick:HVAC_Zone ;
-    brick:hasPart bldg:Room-L2-411 .
+bldg:SG_HQ_VAV2-4Zone a brick:HVAC_Zone ;
+    brick:hasPart bldg:SG_HQ_Room-L2-411 .
 
-bldg:VAV2-4.DPR a brick:Damper ;
-	brick:feeds bldg:VAV2-4Zone ;
-    brick:hasPoint bldg:VAV2-4.DPRPOS .
+bldg:SG_HQ_VAV2-4.DPR a brick:Damper ;
+	brick:feeds bldg:SG_HQ_VAV2-4Zone ;
+    brick:hasPoint bldg:SG_HQ_VAV2-4.DPRPOS .
 
-bldg:VAV2-4.DPRPOS a brick:Damper_Position_Sensor ;
+bldg:SG_HQ_VAV2-4.DPRPOS a brick:Damper_Position_Sensor ;
 	brick:value 20 .
 
-bldg:VAV2-5 a brick:Variable_Air_Volume_Box ;
-    brick:hasPart bldg:VAV2-5.DPR ;
-	brick:feeds bldg:VAV2-5Zone .
+bldg:SG_HQ_VAV2-5 a brick:Variable_Air_Volume_Box ;
+    brick:hasPart bldg:SG_HQ_VAV2-5.DPR ;
+	brick:feeds bldg:SG_HQ_VAV2-5Zone .
 		
-bldg:VAV2-5Zone a brick:HVAC_Zone ;
-    brick:hasPart bldg:Room-L2-410 .
+bldg:SG_HQ_VAV2-5Zone a brick:HVAC_Zone ;
+    brick:hasPart bldg:SG_HQ_Room-L2-410 .
 
-bldg:VAV2-5.DPR a brick:Damper ;
-	brick:feeds bldg:VAV2-5Zone ;
-    brick:hasPoint bldg:VAV2-5.DPRPOS .
+bldg:SG_HQ_VAV2-5.DPR a brick:Damper ;
+	brick:feeds bldg:SG_HQ_VAV2-5Zone ;
+    brick:hasPoint bldg:SG_HQ_VAV2-5.DPRPOS .
 
-bldg:VAV2-5.DPRPOS a brick:Damper_Position_Sensor ;
+bldg:SG_HQ_VAV2-5.DPRPOS a brick:Damper_Position_Sensor ;
 	brick:value 55 .
 
-bldg:Room-L2-410 a brick:Room ;
-	brick:isPartOf bldg:VAV2-5Zone ;
+bldg:SG_HQ_Room-L2-410 a brick:Room ;
+	brick:isPartOf bldg:SG_HQ_VAV2-5Zone ;
     brick:latitude 1.26475309;
-    brick:longitude 103.81836290;        
-	brick:isLocationOf bldg:Level-2 .
+    brick:longitude 103.818362;        
+	brick:isLocationOf bldg:SG_HQ_Level-2 .
 
-bldg:Room-L2-411 a brick:Room ;
-	brick:isPartOf bldg:VAV2-4Zone ;
+bldg:SG_HQ_Room-L2-411 a brick:Room ;
+	brick:isPartOf bldg:SG_HQ_VAV2-4Zone ;
     brick:latitude 1.2638509;
-    brick:longitude 103.8179590;      
-	brick:isLocationOf bldg:Level-2 .
+    brick:longitude 103.817959;      
+	brick:isLocationOf bldg:SG_HQ_Level-2 .
 
-bldg:Room-L2-412 a brick:Room ;
-	brick:isPartOf bldg:VAV2-3Zone ;
+bldg:SG_HQ_Room-L2-412 a brick:Room ;
+	brick:isPartOf bldg:SG_HQ_VAV2-3Zone ;
     brick:latitude 1.2659709;
-    brick:longitude 103.818634290;     
-	brick:isLocationOf bldg:Level-2 .
+    brick:longitude 103.818634;     
+	brick:isLocationOf bldg:SG_HQ_Level-2 .
 
-bldg:air_temp_sensor_2410 a brick:Air_Temperature_Sensor ;
+bldg:SG_HQ_air_temp_sensor-2410 a brick:Air_Temperature_Sensor ;
 	brick:hasUnit unit:DEG_C ;
 	brick:value 25.5;
-    brick:latitude 1.26477809;
-    brick:longitude 103.81833290;    
-    brick:isPointOf bldg:VAV2-5 .
+    brick:latitude 1.264778;
+    brick:longitude 103.818332;    
+    brick:isPointOf bldg:SG_HQ_VAV2-5 .
 	
-bldg:co2_sensor_2410 a brick:CO2_Level_Sensor ;
+bldg:SG_HQ_co2_sensor-2410 a brick:CO2_Level_Sensor ;
     brick:hasUnit unit:PPM ;
 	brick:value 563;
-    brick:isPointOf bldg:VAV2-5 .
+    brick:isPointOf bldg:SG_HQ_VAV2-5 .
 	
 
-bldg:air_temp_sensor_2411 a brick:Air_Temperature_Sensor ;
+bldg:SG_HQ_air_temp_sensor-2411 a brick:Air_Temperature_Sensor ;
 	brick:hasUnit unit:DEG_C ;
 	brick:value 30.7;
-    brick:latitude 1.2638209;
-    brick:longitude 103.8179190;       
-    brick:isPointOf bldg:VAV2-4 .
+    brick:latitude 1.263821;
+    brick:longitude 103.817919;       
+    brick:isPointOf bldg:SG_HQ_VAV2-4 .
 	
-bldg:co2_sensor_2411 a brick:CO2_Level_Sensor ;
+bldg:SG_HQ_co2_sensor-2411 a brick:CO2_Level_Sensor ;
     brick:hasUnit unit:PPM ;
 	brick:value 812;
-    brick:isPointOf bldg:VAV2-4 .
+    brick:isPointOf bldg:SG_HQ_VAV2-4 .
 	
-bldg:air_temp_sensor_2412 a brick:Air_Temperature_Sensor ;
+bldg:SG_HQ_air_temp_sensor-2412 a brick:Air_Temperature_Sensor ;
 	brick:hasUnit unit:DEG_C ;
 	brick:value 29.2;
     brick:latitude 1.2659509;
-    brick:longitude 103.818664290;      
-    brick:isPointOf bldg:VAV2-3 .
+    brick:longitude 103.8186642;      
+    brick:isPointOf bldg:SG_HQ_VAV2-3 .
 	
-bldg:co2_sensor_2412 a brick:CO2_Level_Sensor ;
+bldg:SG_HQ_co2_sensor-2412 a brick:CO2_Level_Sensor ;
     brick:hasUnit unit:PPM ;
 	brick:value 422;
-    brick:isPointOf bldg:VAV2-3 .
+    brick:isPointOf bldg:SG_HQ_VAV2-3 .
 
-bldg:Level-2 a brick:Floor ;
-	brick:isLocationOf bldg:Our-building;
+# LEVEL 1 HVAC instances
+
+bldg:SG_HQ_AHU0A a brick:Air_Handler_Unit ;
+    brick:feeds bldg:SG_HQ_VAV1-1,
+        bldg:SG_HQ_VAV1-4,
+		bldg:SG_HQ_VAV1-5 .
+
+bldg:SG_HQ_VAV1-1 a brick:Variable_Air_Volume_Box ;
+    brick:hasPart bldg:SG_HQ_VAV1-1.DPR ;
+	brick:feeds bldg:SG_HQ_VAV1-1Zone .
+
+bldg:SG_HQ_VAV1-1.DPR a brick:Damper ;
+	brick:feeds bldg:SG_HQ_VAV1-1Zone ;
+    brick:hasPoint bldg:SG_HQ_VAV1-1.DPRPOS .
+
+bldg:SG_HQ_VAV1-1.DPRPOS a brick:Damper_Position_Sensor  ;
+	brick:value 100 .
+
+bldg:SG_HQ_VAV1-1Zone a brick:HVAC_Zone ;
+    brick:hasPart bldg:SG_HQ_Room-L1-212 .
+
+bldg:SG_HQ_VAV1-4 a brick:Variable_Air_Volume_Box ;
+    brick:hasPart bldg:SG_HQ_VAV1-4.DPR ;
+	brick:feeds bldg:SG_HQ_VAV1-4Zone .
+		
+bldg:SG_HQ_VAV1-4Zone a brick:HVAC_Zone ;
+    brick:hasPart bldg:SG_HQ_Room-L1-211 .
+
+bldg:SG_HQ_VAV1-4.DPR a brick:Damper ;
+	brick:feeds bldg:SG_HQ_VAV1-4Zone ;
+    brick:hasPoint bldg:SG_HQ_VAV1-4.DPRPOS .
+
+bldg:SG_HQ_VAV1-4.DPRPOS a brick:Damper_Position_Sensor ;
+	brick:value 20 .
+
+bldg:SG_HQ_VAV1-5 a brick:Variable_Air_Volume_Box ;
+    brick:hasPart bldg:SG_HQ_VAV1-5.DPR ;
+	brick:feeds bldg:SG_HQ_VAV1-5Zone .
+		
+bldg:SG_HQ_VAV1-5Zone a brick:HVAC_Zone ;
+    brick:hasPart bldg:SG_HQ_Room-L1-210 .
+
+bldg:SG_HQ_VAV1-5.DPR a brick:Damper ;
+	brick:feeds bldg:SG_HQ_VAV1-5Zone ;
+    brick:hasPoint bldg:SG_HQ_VAV1-5.DPRPOS .
+
+bldg:SG_HQ_VAV1-5.DPRPOS a brick:Damper_Position_Sensor ;
+	brick:value 55 .
+
+bldg:SG_HQ_Room-L1-210 a brick:Room ;
+	brick:isPartOf bldg:SG_HQ_VAV1-5Zone ;
+    brick:latitude 1.26475309;
+    brick:longitude 103.818362;        
+	brick:isLocationOf bldg:SG_HQ_Level-2 .
+
+bldg:SG_HQ_Room-L1-211 a brick:Room ;
+	brick:isPartOf bldg:SG_HQ_VAV1-4Zone ;
+    brick:latitude 1.2638509;
+    brick:longitude 103.817959;      
+	brick:isLocationOf bldg:SG_HQ_Level-2 .
+
+bldg:SG_HQ_Room-L1-212 a brick:Room ;
+	brick:isPartOf bldg:SG_HQ_VAV1-1Zone ;
+    brick:latitude 1.2659709;
+    brick:longitude 103.818634;     
+	brick:isLocationOf bldg:SG_HQ_Level-2 .
+
+bldg:SG_HQ_air_temp_sensor-1210 a brick:Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_C ;
+	brick:value 25.5;
+    brick:latitude 1.264778;
+    brick:longitude 103.818332;    
+    brick:isPointOf bldg:SG_HQ_VAV1-5 .
+	
+bldg:SG_HQ_co2_sensor-1210 a brick:CO2_Level_Sensor ;
+    brick:hasUnit unit:PPM ;
+	brick:value 563;
+    brick:isPointOf bldg:SG_HQ_VAV1-5 .
+	
+
+bldg:SG_HQ_air_temp_sensor-1211 a brick:Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_C ;
+	brick:value 25.7;
+    brick:latitude 1.263821;
+    brick:longitude 103.817919;       
+    brick:isPointOf bldg:SG_HQ_VAV1-4 .
+	
+bldg:SG_HQ_co2_sensor-1211 a brick:CO2_Level_Sensor ;
+    brick:hasUnit unit:PPM ;
+	brick:value 512;
+    brick:isPointOf bldg:SG_HQ_VAV1-4 .
+	
+bldg:SG_HQ_air_temp_sensor-1212 a brick:Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_C ;
+	brick:value 25.2;
+    brick:latitude 1.2659509;
+    brick:longitude 103.8186642;      
+    brick:isPointOf bldg:SG_HQ_VAV1-1 .
+	
+bldg:SG_HQ_co2_sensor-1212 a brick:CO2_Level_Sensor ;
+    brick:hasUnit unit:PPM ;
+	brick:value 522;
+    brick:isPointOf bldg:SG_HQ_VAV1-1 .
+
+
+# IAQ Device in Level 1
+
+bldg:SG_HQ_air_temp_sensor-121201 a brick:Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_C ;
+	brick:value 25.2;    
+    brick:isPointOf bldg:SG_HQ_IAQ-121201 .
+	
+bldg:SG_HQ_co2_sensor-121201 a brick:CO2_Level_Sensor ;
+    brick:hasUnit unit:PPM ;
+	brick:value 522;
+    brick:isPointOf bldg:SG_HQ_IAQ-121201 .
+	
+bldg:SG_HQ_IAQ-121201 a brick:Indoor_Air_Quality_Device ;
+	brick:hasUnit unit:DEG_C ;
+	brick:value 25.2;
+    brick:latitude 1.2658509;
+    brick:longitude 103.8185642;      
+    brick:isPartOf bldg:SG_HQ_Room-L1-212 .
+
+
+# LEVELS
+
+bldg:SG_HQ_Level-1 a brick:Floor ;
+	brick:isLocationOf bldg:SG-HQ;
+	brick:area [ brick:hasUnit unit:M2 ;
+            brick:value 4611 ] .
+
+
+bldg:SG_HQ_Level-2 a brick:Floor ;
+	brick:isLocationOf bldg:SG-HQ;
 	brick:area [ brick:hasUnit unit:M2 ;
             brick:value 4650 ] .
 
-bldg:Our-building a brick:Building .
+bldg:SG-HQ a brick:Building .
+
+
+# JP HQ
+
+# Window instances for L2
+bldg:JP_HQ_Room-L2-410-W01-SENSOR a brick:Window_Position_Sensor ;
+	brick:value 0;
+    brick:latitude 35.6348809;
+    brick:longitude 139.7482290;
+	brick:isPointOf bldg:JP_HQ_Room-L2-410 .
+bldg:JP_HQ_Room-L2-410-W01 a brick:Window ;
+	brick:isPartOf bldg:JP_HQ_Room-L2-410 ;
+	brick:hasPoint bldg:JP_HQ_Room-L2-410-W01-SENSOR .
+
+bldg:JP_HQ_Room-L2-411-W01-SENSOR a brick:Window_Position_Sensor ;
+	brick:value 0;
+    brick:latitude 35.6338809;
+    brick:longitude 139.7479290;    
+	brick:isPointOf bldg:JP_HQ_Room-L2-411 .
+bldg:JP_HQ_Room-L2-411-W01 a brick:Window ;
+	brick:isPartOf bldg:JP_HQ_Room-L2-411 ;
+	brick:hasPoint bldg:JP_HQ_Room-L2-411-W01-SENSOR .
+	
+bldg:JP_HQ_Room-L2-412-W01-SENSOR a brick:Window_Position_Sensor ;
+	brick:value 63;
+    brick:latitude 35.6358809;
+    brick:longitude 139.74844290;       
+	brick:isPointOf bldg:JP_HQ_Room-L2-412 .
+bldg:JP_HQ_Room-L2-412-W01 a brick:Window ;
+	brick:isPartOf bldg:JP_HQ_Room-L2-412 ;
+	brick:hasPoint bldg:JP_HQ_Room-L2-412-W01-SENSOR .
+
+# LEVEL 2 HVAC instances
+bldg:JP_HQ_AHU1A a brick:Air_Handler_Unit ;
+    brick:feeds bldg:JP_HQ_VAV2-3,
+        bldg:JP_HQ_VAV2-4,
+		bldg:JP_HQ_VAV2-5 .
+
+bldg:JP_HQ_VAV2-3 a brick:Variable_Air_Volume_Box ;
+    brick:hasPart bldg:JP_HQ_VAV2-3.DPR ;
+	brick:feeds bldg:JP_HQ_VAV2-3Zone .
+
+bldg:JP_HQ_VAV2-3.DPR a brick:Damper ;
+	brick:feeds bldg:JP_HQ_VAV2-3Zone ;
+    brick:hasPoint bldg:JP_HQ_VAV2-3.DPRPOS .
+
+bldg:JP_HQ_VAV2-3.DPRPOS a brick:Damper_Position_Sensor  ;
+	brick:value 100 .
+
+bldg:JP_HQ_VAV2-3Zone a brick:HVAC_Zone ;
+    brick:hasPart bldg:JP_HQ_Room-L2-412 .
+
+bldg:JP_HQ_VAV2-4 a brick:Variable_Air_Volume_Box ;
+    brick:hasPart bldg:JP_HQ_VAV2-4.DPR ;
+	brick:feeds bldg:JP_HQ_VAV2-4Zone .
+		
+bldg:JP_HQ_VAV2-4Zone a brick:HVAC_Zone ;
+    brick:hasPart bldg:JP_HQ_Room-L2-411 .
+
+bldg:JP_HQ_VAV2-4.DPR a brick:Damper ;
+	brick:feeds bldg:JP_HQ_VAV2-4Zone ;
+    brick:hasPoint bldg:JP_HQ_VAV2-4.DPRPOS .
+
+bldg:JP_HQ_VAV2-4.DPRPOS a brick:Damper_Position_Sensor ;
+	brick:value 20 .
+
+bldg:JP_HQ_VAV2-5 a brick:Variable_Air_Volume_Box ;
+    brick:hasPart bldg:JP_HQ_VAV2-5.DPR ;
+	brick:feeds bldg:JP_HQ_VAV2-5Zone .
+		
+bldg:JP_HQ_VAV2-5Zone a brick:HVAC_Zone ;
+    brick:hasPart bldg:JP_HQ_Room-L2-410 .
+
+bldg:JP_HQ_VAV2-5.DPR a brick:Damper ;
+	brick:feeds bldg:JP_HQ_VAV2-5Zone ;
+    brick:hasPoint bldg:JP_HQ_VAV2-5.DPRPOS .
+
+bldg:JP_HQ_VAV2-5.DPRPOS a brick:Damper_Position_Sensor ;
+	brick:value 55 .
+
+bldg:JP_HQ_Room-L2-410 a brick:Room ;
+	brick:isPartOf bldg:JP_HQ_VAV2-5Zone ;
+    brick:latitude 35.63475309;
+    brick:longitude 139.748362;        
+	brick:isLocationOf bldg:JP_HQ_Level-2 .
+
+bldg:JP_HQ_Room-L2-411 a brick:Room ;
+	brick:isPartOf bldg:JP_HQ_VAV2-4Zone ;
+    brick:latitude 35.6338509;
+    brick:longitude 139.747959;      
+	brick:isLocationOf bldg:JP_HQ_Level-2 .
+
+bldg:JP_HQ_Room-L2-412 a brick:Room ;
+	brick:isPartOf bldg:JP_HQ_VAV2-3Zone ;
+    brick:latitude 35.6359709;
+    brick:longitude 139.748634;     
+	brick:isLocationOf bldg:JP_HQ_Level-2 .
+
+bldg:JP_HQ_air_temp_sensor-2410 a brick:Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_C ;
+	brick:value 25.5;
+    brick:latitude 35.634778;
+    brick:longitude 139.748332;    
+    brick:isPointOf bldg:JP_HQ_VAV2-5 .
+	
+bldg:JP_HQ_co2_sensor-2410 a brick:CO2_Level_Sensor ;
+    brick:hasUnit unit:PPM ;
+	brick:value 563;
+    brick:isPointOf bldg:JP_HQ_VAV2-5 .
+	
+
+bldg:JP_HQ_air_temp_sensor-2411 a brick:Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_C ;
+	brick:value 30.7;
+    brick:latitude 35.633821;
+    brick:longitude 139.747919;       
+    brick:isPointOf bldg:JP_HQ_VAV2-4 .
+	
+bldg:JP_HQ_co2_sensor-2411 a brick:CO2_Level_Sensor ;
+    brick:hasUnit unit:PPM ;
+	brick:value 812;
+    brick:isPointOf bldg:JP_HQ_VAV2-4 .
+	
+bldg:JP_HQ_air_temp_sensor-2412 a brick:Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_C ;
+	brick:value 29.2;
+    brick:latitude 35.6359509;
+    brick:longitude 139.7486642;      
+    brick:isPointOf bldg:JP_HQ_VAV2-3 .
+	
+bldg:JP_HQ_co2_sensor-2412 a brick:CO2_Level_Sensor ;
+    brick:hasUnit unit:PPM ;
+	brick:value 422;
+    brick:isPointOf bldg:JP_HQ_VAV2-3 .
+
+# LEVEL 1 HVAC instances
+
+bldg:JP_HQ_AHU0A a brick:Air_Handler_Unit ;
+    brick:feeds bldg:JP_HQ_VAV1-1,
+        bldg:JP_HQ_VAV1-4,
+		bldg:JP_HQ_VAV1-5 .
+
+bldg:JP_HQ_VAV1-1 a brick:Variable_Air_Volume_Box ;
+    brick:hasPart bldg:JP_HQ_VAV1-1.DPR ;
+	brick:feeds bldg:JP_HQ_VAV1-1Zone .
+
+bldg:JP_HQ_VAV1-1.DPR a brick:Damper ;
+	brick:feeds bldg:JP_HQ_VAV1-1Zone ;
+    brick:hasPoint bldg:JP_HQ_VAV1-1.DPRPOS .
+
+bldg:JP_HQ_VAV1-1.DPRPOS a brick:Damper_Position_Sensor  ;
+	brick:value 100 .
+
+bldg:JP_HQ_VAV1-1Zone a brick:HVAC_Zone ;
+    brick:hasPart bldg:JP_HQ_Room-L1-212 .
+
+bldg:JP_HQ_VAV1-4 a brick:Variable_Air_Volume_Box ;
+    brick:hasPart bldg:JP_HQ_VAV1-4.DPR ;
+	brick:feeds bldg:JP_HQ_VAV1-4Zone .
+		
+bldg:JP_HQ_VAV1-4Zone a brick:HVAC_Zone ;
+    brick:hasPart bldg:JP_HQ_Room-L1-211 .
+
+bldg:JP_HQ_VAV1-4.DPR a brick:Damper ;
+	brick:feeds bldg:JP_HQ_VAV1-4Zone ;
+    brick:hasPoint bldg:JP_HQ_VAV1-4.DPRPOS .
+
+bldg:JP_HQ_VAV1-4.DPRPOS a brick:Damper_Position_Sensor ;
+	brick:value 20 .
+
+bldg:JP_HQ_VAV1-5 a brick:Variable_Air_Volume_Box ;
+    brick:hasPart bldg:JP_HQ_VAV1-5.DPR ;
+	brick:feeds bldg:JP_HQ_VAV1-5Zone .
+		
+bldg:JP_HQ_VAV1-5Zone a brick:HVAC_Zone ;
+    brick:hasPart bldg:JP_HQ_Room-L1-210 .
+
+bldg:JP_HQ_VAV1-5.DPR a brick:Damper ;
+	brick:feeds bldg:JP_HQ_VAV1-5Zone ;
+    brick:hasPoint bldg:JP_HQ_VAV1-5.DPRPOS .
+
+bldg:JP_HQ_VAV1-5.DPRPOS a brick:Damper_Position_Sensor ;
+	brick:value 55 .
+
+bldg:JP_HQ_Room-L1-210 a brick:Room ;
+	brick:isPartOf bldg:JP_HQ_VAV1-5Zone ;
+    brick:latitude 35.63475309;
+    brick:longitude 139.748362;        
+	brick:isLocationOf bldg:JP_HQ_Level-2 .
+
+bldg:JP_HQ_Room-L1-211 a brick:Room ;
+	brick:isPartOf bldg:JP_HQ_VAV1-4Zone ;
+    brick:latitude 35.6338509;
+    brick:longitude 139.747959;      
+	brick:isLocationOf bldg:JP_HQ_Level-2 .
+
+bldg:JP_HQ_Room-L1-212 a brick:Room ;
+	brick:isPartOf bldg:JP_HQ_VAV1-1Zone ;
+    brick:latitude 35.6359709;
+    brick:longitude 139.748634;     
+	brick:isLocationOf bldg:JP_HQ_Level-2 .
+
+bldg:JP_HQ_air_temp_sensor-1210 a brick:Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_C ;
+	brick:value 25.5;
+    brick:latitude 35.634778;
+    brick:longitude 139.748332;    
+    brick:isPointOf bldg:JP_HQ_VAV1-5 .
+	
+bldg:JP_HQ_co2_sensor-1210 a brick:CO2_Level_Sensor ;
+    brick:hasUnit unit:PPM ;
+	brick:value 563;
+    brick:isPointOf bldg:JP_HQ_VAV1-5 .
+	
+
+bldg:JP_HQ_air_temp_sensor-1211 a brick:Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_C ;
+	brick:value 25.7;
+    brick:latitude 35.633821;
+    brick:longitude 139.747919;       
+    brick:isPointOf bldg:JP_HQ_VAV1-4 .
+	
+bldg:JP_HQ_co2_sensor-1211 a brick:CO2_Level_Sensor ;
+    brick:hasUnit unit:PPM ;
+	brick:value 512;
+    brick:isPointOf bldg:JP_HQ_VAV1-4 .
+	
+bldg:JP_HQ_air_temp_sensor-1212 a brick:Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_C ;
+	brick:value 25.2;
+    brick:latitude 35.6359509;
+    brick:longitude 139.7486642;      
+    brick:isPointOf bldg:JP_HQ_VAV1-1 .
+	
+bldg:JP_HQ_co2_sensor-1212 a brick:CO2_Level_Sensor ;
+    brick:hasUnit unit:PPM ;
+	brick:value 522;
+    brick:isPointOf bldg:JP_HQ_VAV1-1 .
+
+
+# IAQ Device in Level 1
+
+bldg:JP_HQ_air_temp_sensor-121201 a brick:Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_C ;
+	brick:value 25.2;    
+    brick:isPointOf bldg:JP_HQ_IAQ-121201 .
+	
+bldg:JP_HQ_co2_sensor-121201 a brick:CO2_Level_Sensor ;
+    brick:hasUnit unit:PPM ;
+	brick:value 522;
+    brick:isPointOf bldg:JP_HQ_IAQ-121201 .
+	
+bldg:JP_HQ_IAQ-121201 a brick:Indoor_Air_Quality_Device ;
+	brick:hasUnit unit:DEG_C ;
+	brick:value 25.2;
+    brick:latitude 35.6358509;
+    brick:longitude 139.7485642;      
+    brick:isPartOf bldg:JP_HQ_Room-L1-212 .
+
+
+# LEVELS
+
+bldg:JP_HQ_Level-1 a brick:Floor ;
+	brick:isLocationOf bldg:SG-HQ;
+	brick:area [ brick:hasUnit unit:M2 ;
+            brick:value 2233 ] .
+
+
+bldg:JP_HQ_Level-2 a brick:Floor ;
+	brick:isLocationOf bldg:SG-HQ;
+	brick:area [ brick:hasUnit unit:M2 ;
+            brick:value 2230 ] .
+
+bldg:JP-HQ a brick:Building .
