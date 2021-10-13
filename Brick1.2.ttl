@@ -19221,23 +19221,23 @@ bldg:SG_HQ_Room-L1-210 a brick:Room ;
 	brick:isPartOf bldg:SG_HQ_VAV1-5Zone ;
     brick:latitude 1.26475309;
     brick:longitude 103.818362;        
-	brick:isLocationOf bldg:SG_HQ_Level-2 .
+	brick:isLocationOf bldg:SG_HQ_Level-1 .
 
 bldg:SG_HQ_Room-L1-211 a brick:Room ;
 	brick:isPartOf bldg:SG_HQ_VAV1-4Zone ;
     brick:latitude 1.2638509;
     brick:longitude 103.817959;      
-	brick:isLocationOf bldg:SG_HQ_Level-2 .
+	brick:isLocationOf bldg:SG_HQ_Level-1 .
 
 bldg:SG_HQ_Room-L1-212 a brick:Room ;
 	brick:isPartOf bldg:SG_HQ_VAV1-1Zone ;
     brick:latitude 1.2659709;
     brick:longitude 103.818634;     
-	brick:isLocationOf bldg:SG_HQ_Level-2 .
+	brick:isLocationOf bldg:SG_HQ_Level-1 .
 
 bldg:SG_HQ_air_temp_sensor-1210 a brick:Air_Temperature_Sensor ;
 	brick:hasUnit unit:DEG_C ;
-	brick:value 25.5;
+	brick:value 25.45;
     brick:latitude 1.264778;
     brick:longitude 103.818332;    
     brick:isPointOf bldg:SG_HQ_VAV1-5 .
@@ -19495,19 +19495,19 @@ bldg:JP_HQ_Room-L1-210 a brick:Room ;
 	brick:isPartOf bldg:JP_HQ_VAV1-5Zone ;
     brick:latitude 35.63475309;
     brick:longitude 139.748362;        
-	brick:isLocationOf bldg:JP_HQ_Level-2 .
+	brick:isLocationOf bldg:JP_HQ_Level-1 .
 
 bldg:JP_HQ_Room-L1-211 a brick:Room ;
 	brick:isPartOf bldg:JP_HQ_VAV1-4Zone ;
     brick:latitude 35.6338509;
     brick:longitude 139.747959;      
-	brick:isLocationOf bldg:JP_HQ_Level-2 .
+	brick:isLocationOf bldg:JP_HQ_Level-1 .
 
 bldg:JP_HQ_Room-L1-212 a brick:Room ;
 	brick:isPartOf bldg:JP_HQ_VAV1-1Zone ;
     brick:latitude 35.6359709;
     brick:longitude 139.748634;     
-	brick:isLocationOf bldg:JP_HQ_Level-2 .
+	brick:isLocationOf bldg:JP_HQ_Level-1 .
 
 bldg:JP_HQ_air_temp_sensor-1210 a brick:Air_Temperature_Sensor ;
 	brick:hasUnit unit:DEG_C ;
@@ -19561,7 +19561,7 @@ bldg:JP_HQ_co2_sensor-121201 a brick:CO2_Level_Sensor ;
 	
 bldg:JP_HQ_IAQ-121201 a brick:Indoor_Air_Quality_Device ;
 	brick:hasUnit unit:DEG_C ;
-	brick:value 25.2;
+	brick:value 25.33;
     brick:latitude 35.6358509;
     brick:longitude 139.7485642;      
     brick:isPartOf bldg:JP_HQ_Room-L1-212 .
@@ -19570,13 +19570,13 @@ bldg:JP_HQ_IAQ-121201 a brick:Indoor_Air_Quality_Device ;
 # LEVELS
 
 bldg:JP_HQ_Level-1 a brick:Floor ;
-	brick:isLocationOf bldg:SG-HQ;
+	brick:isLocationOf bldg:JP-HQ;
 	brick:area [ brick:hasUnit unit:M2 ;
             brick:value 2233 ] .
 
 
 bldg:JP_HQ_Level-2 a brick:Floor ;
-	brick:isLocationOf bldg:SG-HQ;
+	brick:isLocationOf bldg:JP-HQ;
 	brick:area [ brick:hasUnit unit:M2 ;
             brick:value 2230 ] .
 
