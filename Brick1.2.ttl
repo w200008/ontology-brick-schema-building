@@ -19038,14 +19038,16 @@ brick:Indoor_Air_Quality_Device a owl:Class ;
         tag:IAQ.
 
 # Window instances for L2
-bldg:SG_HQ_Room-L2-410-W01-SENSOR a brick:Window_Position_Sensor ;
-	brick:value 0;
+bldg:SG_OFFICE_Room-L2-410-W01-SENSOR a brick:Window_Position_Sensor ;
+	brick:value 0.
+bldg:SG_OFFICE_Room-L2-410-W01 a brick:Window ;
+	brick:isPartOf bldg:SG_OFFICE_Room-L2-410 ;
+	brick:hasPoint bldg:SG_OFFICE_Room-L2-410-W01-SENSOR 
+    brick:coordinates bldg:SG_OFFICE_Room-L2-410-W01-Location.
+
+bldg:SG_OFFICE_Room-L2-410-W01-Location a brick:coordinates ;
     brick:latitude 1.2648809;
-    brick:longitude 103.8182290;
-	brick:isPointOf bldg:SG_HQ_Room-L2-410 .
-bldg:SG_HQ_Room-L2-410-W01 a brick:Window ;
-	brick:isPartOf bldg:SG_HQ_Room-L2-410 ;
-	brick:hasPoint bldg:SG_HQ_Room-L2-410-W01-SENSOR .
+    brick:longitude 103.8182290 .
 
 bldg:SG_HQ_Room-L2-411-W01-SENSOR a brick:Window_Position_Sensor ;
 	brick:value 0;
