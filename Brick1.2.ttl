@@ -19427,7 +19427,7 @@ bldg:SG_HQ_Lamp_1043_Coordinate a brick:coordinates ;
 # Motion Sensor
 
 bldg:SG_HQ_Lamp_1024_Motion_Sensor a brick:Motion_Sensor ;
-    brick:value 1.
+    brick:value 0.
 bldg:SG_HQ_Lamp_1025_Motion_Sensor a brick:Motion_Sensor ;
     brick:value 0.
 bldg:SG_HQ_Lamp_1026_Motion_Sensor a brick:Motion_Sensor ;
@@ -19445,7 +19445,7 @@ bldg:SG_HQ_Lamp_1031_Motion_Sensor a brick:Motion_Sensor ;
 bldg:SG_HQ_Lamp_1032_Motion_Sensor a brick:Motion_Sensor ;
     brick:value 0.
 bldg:SG_HQ_Lamp_1033_Motion_Sensor a brick:Motion_Sensor ;
-    brick:value 1.
+    brick:value 0.
 bldg:SG_HQ_Lamp_1034_Motion_Sensor a brick:Motion_Sensor ;
     brick:value 0.
 bldg:SG_HQ_Lamp_1035_Motion_Sensor a brick:Motion_Sensor ;
@@ -19472,65 +19472,84 @@ bldg:SG_HQ_Lamp_1043_Motion_Sensor a brick:Motion_Sensor ;
 
 bldg:SG_HQ_Lamp_1024 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1024_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1024_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1024_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1025 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1025_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1025_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1025_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1026 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1026_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1026_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1026_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1027 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1027_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1027_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1027_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1028 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1028_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1028_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1028_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1029 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1029_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1029_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1029_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1030 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1030_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1030_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1030_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1031 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1031_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1031_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1031_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1032 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1032_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1032_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1032_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1033 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1033_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1033_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1033_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1034 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1034_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1034_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1034_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1035 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1035_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1035_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1035_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1036 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1036_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1036_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1036_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1037 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1037_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1037_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1037_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1038 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1038_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1038_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1038_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1039 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1039_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1039_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1039_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1040 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1040_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1040_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1040_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1041 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1041_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1041_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1041_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1042 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1042_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1042_Coordinate .
+    brick:coordinates bldg:SG_HQ_Lamp_1042_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 bldg:SG_HQ_Lamp_1043 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1043_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1043_Coordinate .
-
+    brick:coordinates bldg:SG_HQ_Lamp_1043_Coordinate ;
+    brick:isPartOf bldg:SG_HQ . 
 
 
 # LEVELS
