@@ -19061,7 +19061,7 @@ brick:next a owl:ObjectProperty ;
 
 # New EntityProperty resourceName for eaiser view in the tools or reports
 brick:rname a brick:EntityProperty ;
-    skos:definition "The resource's name (or description) assign to the resource have an easier identifying name" .
+    skos:definition "The resource's name (or description) assign to the resource have an easier identifying name"@en .
 
 
 # Window instances for L2
@@ -19406,18 +19406,8 @@ bldg:SG_HQ_IAQ_121201_Coordinate a brick:coordinates ;
 
 
 # Outdoor area of the SG HQ
-
-brick:Outdoor_Area
-bldg:SG_HQ_Lamp_1042 a brick:Smart_Luminaire ;
-    brick:hasPoint bldg:SG_HQ_Lamp_1042_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1042_Coordinate ;
-    brick:isPartOf bldg:SG_HQ . 
-
-
 bldg:SG_HQ_Outdoor_Area a brick:Outdoor_Area ;
 	brick:isLocationOf bldg:SG_HQ;
-	brick:area [ brick:hasUnit unit:M2 ;
-            brick:value 3545 ] ;
     brick:hasAssociatedTag tag:Area,
         tag:Location,
         tag:Outdoor .
