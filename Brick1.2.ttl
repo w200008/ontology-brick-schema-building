@@ -19063,6 +19063,10 @@ brick:next a owl:ObjectProperty ;
 brick:rname a brick:EntityProperty ;
     skos:definition "The resource's name (or description) assign to the resource have an easier identifying name"@en .
 
+# New tag to indicate what extended from Brick Schema from this project
+tag:Extended a brick:Tag ;
+    rdfs:label "Extended" .
+
 
 # Window instances for L2
 bldg:SG_HQ_Room_L2_410_W01_SENSOR a brick:Window_Position_Sensor ;
