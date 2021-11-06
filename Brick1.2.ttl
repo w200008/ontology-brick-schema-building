@@ -19067,73 +19067,93 @@ brick:rname a brick:EntityProperty ;
 tag:Extended a brick:Tag ;
     rdfs:label "Extended" .
 
+
 # Window instances for L2
 bldg:SG_HQ_Room_L2_410_W01_SENSOR a brick:Window_Position_Sensor ;
+    brick:rname SG_HQ_Room_L2_410_W01_SENSOR;
 	brick:value 0 .
 bldg:SG_HQ_Room_L2_410_W01 a brick:Window ;
+    brick:rname SG_HQ_Room_L2_410_W01;
 	brick:isPartOf bldg:SG_HQ_Room_L2_410 ;
 	brick:hasPoint bldg:SG_HQ_Room_L2_410_W01_SENSOR; 
     brick:coordinates bldg:SG_HQ_Room_L2_410_W01_Coordinate .
 bldg:SG_HQ_Room_L2_410_W01_Coordinate a brick:coordinates ;
+    brick:rname SG_HQ_Room_L2_410_W01_Coordinate;
     brick:latitude 1.26572412;
     brick:longitude 103.81874645 .
 
 
 bldg:SG_HQ_Room_L2_411_W01_SENSOR a brick:Window_Position_Sensor ;
+    brick:rname SG_HQ_Room_L2_411_W01_SENSOR;
 	brick:value 0 .
 bldg:SG_HQ_Room_L2_411_W01 a brick:Window ;
+    brick:rname SG_HQ_Room_L2_411_W01;
 	brick:isPartOf bldg:SG_HQ_Room_L2_411 ;
 	brick:hasPoint bldg:SG_HQ_Room_L2_411_W01_SENSOR;
     brick:coordinates bldg:SG_HQ_Room_L2_411_W01_Coordinate .
 bldg:SG_HQ_Room_L2_411_W01_Coordinate a brick:coordinates ;
+    brick:rname SG_HQ_Room_L2_411_W01_Coordinate;
     brick:latitude 1.26572445;
     brick:longitude 103.8187467 .
 	
 bldg:SG_HQ_Room_L2_412_W01_SENSOR a brick:Window_Position_Sensor ;
+    brick:rname SG_HQ_Room_L2_412_W01_SENSOR;
 	brick:value 63 .
 bldg:SG_HQ_Room_L2_412_W01 a brick:Window ;
+    brick:rname SG_HQ_Room_L2_412_W01;
 	brick:isPartOf bldg:SG_HQ_Room_L2_412 ;
 	brick:hasPoint bldg:SG_HQ_Room_L2_412_W01_SENSOR;
     brick:coordinates bldg:SG_HQ_Room_L2_412_W01_Coordinate .
 bldg:SG_HQ_Room_L2_412_W01_Coordinate a brick:coordinates ;
+    brick:rname SG_HQ_Room_L2_412_W01_Coordinate;
     brick:latitude 1.26572456;
     brick:longitude 103.8187432 .
 
 # LEVEL 2 HVAC instances
 bldg:SG_HQ_AHU1A a brick:Air_Handler_Unit ;
+    brick:rname SG_HQ_AHU1A;
     brick:feeds bldg:SG_HQ_VAV2_3,
         bldg:SG_HQ_VAV2_4,
 		bldg:SG_HQ_VAV2_5 .
 
 bldg:SG_HQ_VAV2_3 a brick:Variable_Air_Volume_Box ;
+    brick:rname SG_HQ_VAV2_3;
     brick:hasPart bldg:SG_HQ_VAV2_3.DPR ;
 	brick:feeds bldg:SG_HQ_VAV2_3Zone .
 
 bldg:SG_HQ_VAV2_3.DPR a brick:Damper ;
+    brick:rname SG_HQ_VAV2_3.DPR;
 	brick:feeds bldg:SG_HQ_VAV2_3Zone ;
     brick:hasPoint bldg:SG_HQ_VAV2_3.DPRPOS .
 
 bldg:SG_HQ_VAV2_3.DPRPOS a brick:Damper_Position_Sensor  ;
+    brick:rname SG_HQ_VAV2_3.DPRPOS;
 	brick:value 100 .
 
 bldg:SG_HQ_VAV2_3Zone a brick:HVAC_Zone ;
+    brick:rname SG_HQ_VAV2_3Zone;
     brick:hasPart bldg:SG_HQ_Room_L2_412 .
 
 bldg:SG_HQ_VAV2_4 a brick:Variable_Air_Volume_Box ;
+    brick:rname SG_HQ_VAV2_4;
     brick:hasPart bldg:SG_HQ_VAV2_4.DPR ;
 	brick:feeds bldg:SG_HQ_VAV2_4Zone .
 		
 bldg:SG_HQ_VAV2_4Zone a brick:HVAC_Zone ;
+    brick:rname SG_HQ_VAV2_4Zone;
     brick:hasPart bldg:SG_HQ_Room_L2_411 .
 
 bldg:SG_HQ_VAV2_4.DPR a brick:Damper ;
+    brick:rname SG_HQ_VAV2_4.DPR;
 	brick:feeds bldg:SG_HQ_VAV2_4Zone ;
     brick:hasPoint bldg:SG_HQ_VAV2_4.DPRPOS .
 
 bldg:SG_HQ_VAV2_4.DPRPOS a brick:Damper_Position_Sensor ;
+    brick:rname SG_HQ_VAV2_4.DPRPOS;
 	brick:value 20 .
 
 bldg:SG_HQ_VAV2_5 a brick:Variable_Air_Volume_Box ;
+    brick:rname SG_HQ_VAV2_5;
     brick:hasPart bldg:SG_HQ_VAV2_5.DPR ;
 	brick:feeds bldg:SG_HQ_VAV2_5Zone .
 		
