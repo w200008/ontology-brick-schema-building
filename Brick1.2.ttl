@@ -19008,7 +19008,6 @@ _:has_Point a owl:Restriction ;
 @prefix bldg: <http://t/building#> .
 
 # New type of resource
-# New Window Position Sensor
 brick:Window_Position_Sensor a owl:Class ;
     rdfs:subClassOf [ a owl:Class ;
             owl:intersectionOf ( _:has_Point _:has_Position _:has_Sensor ) ],
@@ -19017,10 +19016,8 @@ brick:Window_Position_Sensor a owl:Class ;
     brick:hasAssociatedTag tag:Window,
         tag:Point,
         tag:Position,
-        tag:Sensor,
-        tag:Extended .
+        tag:Sensor .
 
-# New Smart Window Equipment
 brick:Smart_Window a owl:Class ;
     rdfs:subClassOf [ a owl:Class ;
             owl:intersectionOf ( _:has_Equipment _:has_Fresh _:has_Air ) ],
@@ -19029,10 +19026,8 @@ brick:Smart_Window a owl:Class ;
     brick:hasAssociatedTag tag:Air,
         tag:Equipment,
         tag:Window,
-        tag:Fresh,
-        tag:Extended .
+        tag:Fresh .
 
-# New Indoor Air Quality Equipment, use existing Brick Schema Air Temperature Sensor and CO2 Level Sensor
 brick:Indoor_Air_Quality_Device a owl:Class ;
     rdfs:subClassOf [ a owl:Class ;
             owl:intersectionOf ( _:has_Equipment _:has_Variable ) ],
@@ -19040,120 +19035,75 @@ brick:Indoor_Air_Quality_Device a owl:Class ;
     skos:definition "A indoor air quality monitoring device"@en ;
     brick:hasAssociatedTag tag:Box,
         tag:Equipment,
-        tag:IAQ,
-        tag:Extended .
-
-# New type of Luminaire contains the motion sensor and lighting unit, which able have smart logic to lighting on based on the needs
-brick:Smart_Luminaire a brick:Luminaire ;
-    rdfs:subClassOf [ a brick:Luminaire ;
-            owl:intersectionOf ( _:has_Luminaire _:has_Equipment ) ],
-        brick:Lighting ;
-    skos:definition "A smart lighting unit consisting of a lamp or lamps and ballast(s) (when applicable) together with the parts designed to distribute the light, to position and protect the lamps, and to connect the lamps to the power supply. Also contains the smart motion sensor to make programmable"@en ;
-    brick:hasAssociatedTag tag:Equipment,
-        tag:Luminaire,
-        tag:Smart_Luminaire,
-        tag:Extended .
-
-# New relation to indicate the reousrce one next to another in physical location view
-# brick:next a owl:ObjectProperty ;
-#     rdfs:domain brick:Location ;
-#     skos:definition "Subject is the physical location next with another resource"@en .
-
-# New EntityProperty resourceName for eaiser view in the tools or reports
-brick:rname a brick:EntityProperty ;
-    skos:definition "The resource's name (or description) assign to the resource have an easier identifying name"@en .
-
-# New tag to indicate what extended from Brick Schema from this project
-tag:Extended a brick:Tag ;
-    rdfs:label "Extended" .
-
+        tag:IAQ.
 
 # Window instances for L2
 bldg:SG_HQ_Room_L2_410_W01_SENSOR a brick:Window_Position_Sensor ;
-    brick:rname SG_HQ_Room_L2_410_W01_SENSOR;
 	brick:value 0 .
 bldg:SG_HQ_Room_L2_410_W01 a brick:Window ;
-    brick:rname SG_HQ_Room_L2_410_W01;
 	brick:isPartOf bldg:SG_HQ_Room_L2_410 ;
 	brick:hasPoint bldg:SG_HQ_Room_L2_410_W01_SENSOR; 
     brick:coordinates bldg:SG_HQ_Room_L2_410_W01_Coordinate .
 bldg:SG_HQ_Room_L2_410_W01_Coordinate a brick:coordinates ;
-    brick:rname SG_HQ_Room_L2_410_W01_Coordinate;
     brick:latitude 1.26572412;
     brick:longitude 103.81874645 .
 
 
 bldg:SG_HQ_Room_L2_411_W01_SENSOR a brick:Window_Position_Sensor ;
-    brick:rname SG_HQ_Room_L2_411_W01_SENSOR;
 	brick:value 0 .
 bldg:SG_HQ_Room_L2_411_W01 a brick:Window ;
-    brick:rname SG_HQ_Room_L2_411_W01;
 	brick:isPartOf bldg:SG_HQ_Room_L2_411 ;
 	brick:hasPoint bldg:SG_HQ_Room_L2_411_W01_SENSOR;
     brick:coordinates bldg:SG_HQ_Room_L2_411_W01_Coordinate .
 bldg:SG_HQ_Room_L2_411_W01_Coordinate a brick:coordinates ;
-    brick:rname SG_HQ_Room_L2_411_W01_Coordinate;
     brick:latitude 1.26572445;
     brick:longitude 103.8187467 .
 	
 bldg:SG_HQ_Room_L2_412_W01_SENSOR a brick:Window_Position_Sensor ;
-    brick:rname SG_HQ_Room_L2_412_W01_SENSOR;
 	brick:value 63 .
 bldg:SG_HQ_Room_L2_412_W01 a brick:Window ;
-    brick:rname SG_HQ_Room_L2_412_W01;
 	brick:isPartOf bldg:SG_HQ_Room_L2_412 ;
 	brick:hasPoint bldg:SG_HQ_Room_L2_412_W01_SENSOR;
     brick:coordinates bldg:SG_HQ_Room_L2_412_W01_Coordinate .
 bldg:SG_HQ_Room_L2_412_W01_Coordinate a brick:coordinates ;
-    brick:rname SG_HQ_Room_L2_412_W01_Coordinate;
     brick:latitude 1.26572456;
     brick:longitude 103.8187432 .
 
 # LEVEL 2 HVAC instances
 bldg:SG_HQ_AHU1A a brick:Air_Handler_Unit ;
-    brick:rname SG_HQ_AHU1A;
     brick:feeds bldg:SG_HQ_VAV2_3,
         bldg:SG_HQ_VAV2_4,
 		bldg:SG_HQ_VAV2_5 .
 
 bldg:SG_HQ_VAV2_3 a brick:Variable_Air_Volume_Box ;
-    brick:rname SG_HQ_VAV2_3;
     brick:hasPart bldg:SG_HQ_VAV2_3.DPR ;
 	brick:feeds bldg:SG_HQ_VAV2_3Zone .
 
 bldg:SG_HQ_VAV2_3.DPR a brick:Damper ;
-    brick:rname SG_HQ_VAV2_3.DPR;
 	brick:feeds bldg:SG_HQ_VAV2_3Zone ;
     brick:hasPoint bldg:SG_HQ_VAV2_3.DPRPOS .
 
 bldg:SG_HQ_VAV2_3.DPRPOS a brick:Damper_Position_Sensor  ;
-    brick:rname SG_HQ_VAV2_3.DPRPOS;
 	brick:value 100 .
 
 bldg:SG_HQ_VAV2_3Zone a brick:HVAC_Zone ;
-    brick:rname SG_HQ_VAV2_3Zone;
     brick:hasPart bldg:SG_HQ_Room_L2_412 .
 
 bldg:SG_HQ_VAV2_4 a brick:Variable_Air_Volume_Box ;
-    brick:rname SG_HQ_VAV2_4;
     brick:hasPart bldg:SG_HQ_VAV2_4.DPR ;
 	brick:feeds bldg:SG_HQ_VAV2_4Zone .
 		
 bldg:SG_HQ_VAV2_4Zone a brick:HVAC_Zone ;
-    brick:rname SG_HQ_VAV2_4Zone;
     brick:hasPart bldg:SG_HQ_Room_L2_411 .
 
 bldg:SG_HQ_VAV2_4.DPR a brick:Damper ;
-    brick:rname SG_HQ_VAV2_4.DPR;
 	brick:feeds bldg:SG_HQ_VAV2_4Zone ;
     brick:hasPoint bldg:SG_HQ_VAV2_4.DPRPOS .
 
 bldg:SG_HQ_VAV2_4.DPRPOS a brick:Damper_Position_Sensor ;
-    brick:rname SG_HQ_VAV2_4.DPRPOS;
 	brick:value 20 .
 
 bldg:SG_HQ_VAV2_5 a brick:Variable_Air_Volume_Box ;
-    brick:rname SG_HQ_VAV2_5;
     brick:hasPart bldg:SG_HQ_VAV2_5.DPR ;
 	brick:feeds bldg:SG_HQ_VAV2_5Zone .
 		
@@ -19408,14 +19358,6 @@ bldg:SG_HQ_IAQ_121201_Coordinate a brick:coordinates ;
     brick:longitude 103.8187465 .  
 
 
-
-# Outdoor area of the SG HQ
-bldg:SG_HQ_Outdoor_Area a brick:Outdoor_Area ;
-	brick:isLocationOf bldg:SG_HQ;
-    brick:hasAssociatedTag tag:Area,
-        tag:Location,
-        tag:Outdoor .
-
 # Outside Lighting
 
 # Lamp Coordinate
@@ -19480,40 +19422,12 @@ bldg:SG_HQ_Lamp_1042_Coordinate a brick:coordinates ;
 bldg:SG_HQ_Lamp_1043_Coordinate a brick:coordinates ;
     brick:latitude 1.26548132845526;
     brick:longitude 103.819312155246.
-bldg:SG_HQ_Lamp_1510_Coordinate a brick:coordinates ;
-    brick:latitude 1.26540356336448;
-    brick:longitude 103.818937987089.
-bldg:SG_HQ_Lamp_1511_Coordinate a brick:coordinates ;
-    brick:latitude 1.2653660215957;
-    brick:longitude 103.818936645984.
-bldg:SG_HQ_Lamp_1711_Coordinate a brick:coordinates ;
-    brick:latitude 1.26556177509843;
-    brick:longitude 103.818263411521.
-bldg:SG_HQ_Lamp_1712_Coordinate a brick:coordinates ;
-    brick:latitude 1.26552825566407;
-    brick:longitude 103.818195015192.
-bldg:SG_HQ_Lamp_1713_Coordinate a brick:coordinates ;
-    brick:latitude 1.26550680322586;
-    brick:longitude 103.818149417638.
-bldg:SG_HQ_Lamp_1714_Coordinate a brick:coordinates ;
-    brick:latitude 1.26545183135214;
-    brick:longitude 103.818121254444.
-bldg:SG_HQ_Lamp_1921_Coordinate a brick:coordinates ;
-    brick:latitude 1.26551752944499;
-    brick:longitude 103.818146735429.
-bldg:SG_HQ_Lamp_1922_Coordinate a brick:coordinates ;
-    brick:latitude 1.26553227799623;
-    brick:longitude 103.818107843399.
-bldg:SG_HQ_Lamp_1923_Coordinate a brick:coordinates ;
-    brick:latitude 1.26554702654737;
-    brick:longitude 103.818079680204.
-
 
 
 # Motion Sensor
 
 bldg:SG_HQ_Lamp_1024_Motion_Sensor a brick:Motion_Sensor ;
-    brick:value 1.
+    brick:value 0.
 bldg:SG_HQ_Lamp_1025_Motion_Sensor a brick:Motion_Sensor ;
     brick:value 0.
 bldg:SG_HQ_Lamp_1026_Motion_Sensor a brick:Motion_Sensor ;
@@ -19523,7 +19437,7 @@ bldg:SG_HQ_Lamp_1027_Motion_Sensor a brick:Motion_Sensor ;
 bldg:SG_HQ_Lamp_1028_Motion_Sensor a brick:Motion_Sensor ;
     brick:value 0.
 bldg:SG_HQ_Lamp_1029_Motion_Sensor a brick:Motion_Sensor ;
-    brick:value 1.
+    brick:value 0.
 bldg:SG_HQ_Lamp_1030_Motion_Sensor a brick:Motion_Sensor ;
     brick:value 0.
 bldg:SG_HQ_Lamp_1031_Motion_Sensor a brick:Motion_Sensor ;
@@ -19547,177 +19461,96 @@ bldg:SG_HQ_Lamp_1039_Motion_Sensor a brick:Motion_Sensor ;
 bldg:SG_HQ_Lamp_1040_Motion_Sensor a brick:Motion_Sensor ;
     brick:value 0.
 bldg:SG_HQ_Lamp_1041_Motion_Sensor a brick:Motion_Sensor ;
-    brick:value 1.
+    brick:value 0.
 bldg:SG_HQ_Lamp_1042_Motion_Sensor a brick:Motion_Sensor ;
     brick:value 0.
 bldg:SG_HQ_Lamp_1043_Motion_Sensor a brick:Motion_Sensor ;
     brick:value 0.
-bldg:SG_HQ_Lamp_1510_Motion_Sensor a brick:Motion_Sensor ;
-    brick:value 0.
-bldg:SG_HQ_Lamp_1511_Motion_Sensor a brick:Motion_Sensor ;
-    brick:value 0.
-bldg:SG_HQ_Lamp_1711_Motion_Sensor a brick:Motion_Sensor ;
-    brick:value 0.
-bldg:SG_HQ_Lamp_1712_Motion_Sensor a brick:Motion_Sensor ;
-    brick:value 0.
-bldg:SG_HQ_Lamp_1713_Motion_Sensor a brick:Motion_Sensor ;
-    brick:value 0.
-bldg:SG_HQ_Lamp_1714_Motion_Sensor a brick:Motion_Sensor ;
-    brick:value 0.
-bldg:SG_HQ_Lamp_1921_Motion_Sensor a brick:Motion_Sensor ;
-    brick:value 0.
-bldg:SG_HQ_Lamp_1922_Motion_Sensor a brick:Motion_Sensor ;
-    brick:value 0.
-bldg:SG_HQ_Lamp_1923_Motion_Sensor a brick:Motion_Sensor ;
-    brick:value 0.
 
 
-# Smart_Luminaire
+# Luminaire
 
-bldg:SG_HQ_Lamp_1024 a brick:Smart_Luminaire ;
+bldg:SG_HQ_Lamp_1024 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1024_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1024_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1025 ;
-    # brick:next  bldg:SG_HQ_Lamp_1711 ;    
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1025 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1025 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1025_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1025_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1026 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1026 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1026 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1026_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1026_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1027 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1027 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1027 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1027_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1027_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1028 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1028 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1028 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1028_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1028_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1029 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1029 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1029 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1029_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1029_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1030 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1030 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1030 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1030_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1030_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1031 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1031 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1031 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1031_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1031_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1032 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1032 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1032 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1032_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1032_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1033 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1033 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1033 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1033_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1033_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1034 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1034 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1034 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1034_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1034_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1035 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1035 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1035 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1035_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1035_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1036 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1036 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1036 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1036_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1036_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1037 ;
-    # brick:next  bldg:SG_HQ_Lamp_1510 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1037 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1037 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1037_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1037_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1038 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1038 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1038 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1038_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1038_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1039 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1039 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1039 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1039_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1039_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1040 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1040 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1040 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1040_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1040_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1041 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1041 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1041 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1041_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1041_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1042 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1042 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1042 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1042_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1042_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1043 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1043 a brick:Smart_Luminaire ;
+    brick:isPartOf bldg:SG_HQ . 
+bldg:SG_HQ_Lamp_1043 a brick:Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1043_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1043_Coordinate ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1510 a brick:Smart_Luminaire ;
-    brick:hasPoint bldg:SG_HQ_Lamp_1510_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1510_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1511 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1511 a brick:Smart_Luminaire ;
-    brick:hasPoint bldg:SG_HQ_Lamp_1511_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1511_Coordinate ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1711 a brick:Smart_Luminaire ;
-    brick:hasPoint bldg:SG_HQ_Lamp_1711_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1711_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1712 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1712 a brick:Smart_Luminaire ;
-    brick:hasPoint bldg:SG_HQ_Lamp_1712_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1712_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1713 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1713 a brick:Smart_Luminaire ;
-    brick:hasPoint bldg:SG_HQ_Lamp_1713_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1713_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1714 ;
-    # brick:next  bldg:SG_HQ_Lamp_1921 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1714 a brick:Smart_Luminaire ;
-    brick:hasPoint bldg:SG_HQ_Lamp_1714_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1714_Coordinate ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1921 a brick:Smart_Luminaire ;
-    brick:hasPoint bldg:SG_HQ_Lamp_1921_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1921_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1922 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1922 a brick:Smart_Luminaire ;
-    brick:hasPoint bldg:SG_HQ_Lamp_1922_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1922_Coordinate ;
-    # brick:next  bldg:SG_HQ_Lamp_1923 ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
-bldg:SG_HQ_Lamp_1923 a brick:Smart_Luminaire ;
-    brick:hasPoint bldg:SG_HQ_Lamp_1923_Motion_Sensor;
-    brick:coordinates bldg:SG_HQ_Lamp_1923_Coordinate ;
-    brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
+    brick:isPartOf bldg:SG_HQ . 
+
 
 # LEVELS
 
@@ -20096,4 +19929,3 @@ bldg:JP_HQ a brick:Building ;
 bldg:JP_HQ_Coordinate a brick:coordinates ;
     brick:latitude 35.6357788;
     brick:longitude 139.7487788 .  
-
