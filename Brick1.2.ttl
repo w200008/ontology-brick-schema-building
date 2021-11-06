@@ -19008,6 +19008,7 @@ _:has_Point a owl:Restriction ;
 @prefix bldg: <http://t/building#> .
 
 # New type of resource
+# New Window Position Sensor
 brick:Window_Position_Sensor a owl:Class ;
     rdfs:subClassOf [ a owl:Class ;
             owl:intersectionOf ( _:has_Point _:has_Position _:has_Sensor ) ],
@@ -19016,8 +19017,10 @@ brick:Window_Position_Sensor a owl:Class ;
     brick:hasAssociatedTag tag:Window,
         tag:Point,
         tag:Position,
-        tag:Sensor .
+        tag:Sensor,
+        tag:Extended .
 
+# New Smart Window Equipment
 brick:Smart_Window a owl:Class ;
     rdfs:subClassOf [ a owl:Class ;
             owl:intersectionOf ( _:has_Equipment _:has_Fresh _:has_Air ) ],
@@ -19026,8 +19029,10 @@ brick:Smart_Window a owl:Class ;
     brick:hasAssociatedTag tag:Air,
         tag:Equipment,
         tag:Window,
-        tag:Fresh .
+        tag:Fresh,
+        tag:Extended .
 
+# New Indoor Air Quality Equipment, use existing Brick Schema Air Temperature Sensor and CO2 Level Sensor
 brick:Indoor_Air_Quality_Device a owl:Class ;
     rdfs:subClassOf [ a owl:Class ;
             owl:intersectionOf ( _:has_Equipment _:has_Variable ) ],
@@ -19035,7 +19040,32 @@ brick:Indoor_Air_Quality_Device a owl:Class ;
     skos:definition "A indoor air quality monitoring device"@en ;
     brick:hasAssociatedTag tag:Box,
         tag:Equipment,
-        tag:IAQ.
+        tag:IAQ,
+        tag:Extended .
+
+# New type of Luminaire contains the motion sensor and lighting unit, which able have smart logic to lighting on based on the needs
+brick:Smart_Luminaire a brick:Luminaire ;
+    rdfs:subClassOf [ a brick:Luminaire ;
+            owl:intersectionOf ( _:has_Luminaire _:has_Equipment ) ],
+        brick:Lighting ;
+    skos:definition "A smart lighting unit consisting of a lamp or lamps and ballast(s) (when applicable) together with the parts designed to distribute the light, to position and protect the lamps, and to connect the lamps to the power supply. Also contains the smart motion sensor to make programmable"@en ;
+    brick:hasAssociatedTag tag:Equipment,
+        tag:Luminaire,
+        tag:Smart_Luminaire,
+        tag:Extended .
+
+# New relation to indicate the reousrce one next to another in physical location view
+brick:next a owl:ObjectProperty ;
+    rdfs:domain brick:Location ;
+    skos:definition "Subject is the physical location next with another resource"@en .
+
+# New EntityProperty resourceName for eaiser view in the tools or reports
+brick:rname a brick:EntityProperty ;
+    skos:definition "The resource's name (or description) assign to the resource have an easier identifying name"@en .
+
+# New tag to indicate what extended from Brick Schema from this project
+tag:Extended a brick:Tag ;
+    rdfs:label "Extended" .
 
 # Window instances for L2
 bldg:SG_HQ_Room_L2_410_W01_SENSOR a brick:Window_Position_Sensor ;
