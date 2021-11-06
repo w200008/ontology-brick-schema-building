@@ -19060,8 +19060,7 @@ brick:next a owl:ObjectProperty ;
     skos:definition "Subject is the physical location next with another resource"@en .
 
 # New EntityProperty resourceName for eaiser view in the tools or reports
-brick:rname a owl:DatatypeProperty,
-        owl:ObjectProperty ;
+brick:rname a brick:EntityProperty ;
     skos:definition "The resource's name (or description) assign to the resource have an easier identifying name"@en .
 
 # New tag to indicate what extended from Brick Schema from this project
