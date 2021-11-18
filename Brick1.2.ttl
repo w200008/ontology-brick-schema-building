@@ -19276,13 +19276,16 @@ bldg:SG_HQ_VAV1_1 a brick:Variable_Air_Volume_Box ;
 	brick:feeds bldg:SG_HQ_VAV1_1Zone .
 
 bldg:SG_HQ_VAV1_1.DPR a brick:Damper ;
+    brick:rname "SGHQ_VAV1_1.DPR";
 	brick:feeds bldg:SG_HQ_VAV1_1Zone ;
     brick:hasPoint bldg:SG_HQ_VAV1_1.DPRPOS .
 
 bldg:SG_HQ_VAV1_1.DPRPOS a brick:Damper_Position_Sensor  ;
+    brick:rname "SGHQ_VAV1_1.DPRPOS";
 	brick:value 100 .
 
 bldg:SG_HQ_VAV1_1Zone a brick:HVAC_Zone ;
+    brick:rname "SGHQ_VAV1_1Zone";
     brick:hasPart bldg:SG_HQ_Room_L1_212 .
 
 bldg:SG_HQ_VAV1_4 a brick:Variable_Air_Volume_Box ;
@@ -19291,13 +19294,16 @@ bldg:SG_HQ_VAV1_4 a brick:Variable_Air_Volume_Box ;
 	brick:feeds bldg:SG_HQ_VAV1_4Zone .
 		
 bldg:SG_HQ_VAV1_4Zone a brick:HVAC_Zone ;
+    brick:rname "SGHQ_VAV1_4Zone";
     brick:hasPart bldg:SG_HQ_Room_L1_211 .
 
 bldg:SG_HQ_VAV1_4.DPR a brick:Damper ;
+    brick:rname "SGHQ_VAV1_4.DPR";
 	brick:feeds bldg:SG_HQ_VAV1_4Zone ;
     brick:hasPoint bldg:SG_HQ_VAV1_4.DPRPOS .
 
 bldg:SG_HQ_VAV1_4.DPRPOS a brick:Damper_Position_Sensor ;
+    brick:rname "SGHQ_VAV1_4.DPRPOS";
 	brick:value 20 .
 
 bldg:SG_HQ_VAV1_5 a brick:Variable_Air_Volume_Box ;
@@ -19306,13 +19312,16 @@ bldg:SG_HQ_VAV1_5 a brick:Variable_Air_Volume_Box ;
 	brick:feeds bldg:SG_HQ_VAV1_5Zone .
 		
 bldg:SG_HQ_VAV1_5Zone a brick:HVAC_Zone ;
+    brick:rname "SGHQ_VAV1_5Zone";
     brick:hasPart bldg:SG_HQ_Room_L1_210 .
 
 bldg:SG_HQ_VAV1_5.DPR a brick:Damper ;
+    brick:rname "SGHQ_VAV1_5.DPR";
 	brick:feeds bldg:SG_HQ_VAV1_5Zone ;
     brick:hasPoint bldg:SG_HQ_VAV1_5.DPRPOS .
 
 bldg:SG_HQ_VAV1_5.DPRPOS a brick:Damper_Position_Sensor ;
+    brick:rname "SGHQ_VAV1_5.DPRPOS";
 	brick:value 55 .
 
 bldg:SG_HQ_Room_L1_210 a brick:Room ;
@@ -19343,6 +19352,7 @@ bldg:SG_HQ_Room_L1_212_Coordinate a brick:coordinates ;
     brick:longitude 103.8187435 . 
 
 bldg:SG_HQ_air_temp_sensor_1210 a brick:Air_Temperature_Sensor ;
+    brick:rname "SGHQ_air_temp_sensor_1210";
 	brick:hasUnit unit:DEG_C ;
 	brick:value 25.45;
     brick:latitude 1.26572563;
@@ -19350,6 +19360,7 @@ bldg:SG_HQ_air_temp_sensor_1210 a brick:Air_Temperature_Sensor ;
     brick:isPointOf bldg:SG_HQ_VAV1_5 .
 	
 bldg:SG_HQ_co2_sensor_1210 a brick:CO2_Level_Sensor ;
+    brick:rname "SGHQ_co2_sensor_1210";
     brick:hasUnit unit:PPM ;
 	brick:value 563;
     brick:isPointOf bldg:SG_HQ_VAV1_5 ;
