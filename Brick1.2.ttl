@@ -19427,7 +19427,7 @@ bldg:SG_HQ_air_temp_sensor_121201 a brick:Air_Temperature_Sensor ;
         tag:IAQ .
 	
 bldg:SG_HQ_co2_sensor_121201 a brick:CO2_Level_Sensor ;
-    brick:rname "SGHQ_co2p_sensor_121201";
+    brick:rname "SGHQ_co2_sensor_121201";
     brick:hasUnit unit:PPM ;
 	brick:value 533;
     brick:isPointOf bldg:SG_HQ_IAQ_121201 ;
@@ -19443,6 +19443,33 @@ bldg:SG_HQ_IAQ_121201_Coordinate a brick:coordinates ;
     brick:latitude 1.26572443;
     brick:longitude 103.8187465 .  
 
+# IAQ Device in Level 2
+
+bldg:SG_HQ_air_temp_sensor_241201 a brick:Air_Temperature_Sensor ;
+    brick:rname "SGHQ_air_temp_sensor_241201";
+	brick:hasUnit unit:DEG_C ;
+	brick:value 30.4;    
+    brick:isPointOf bldg:SG_HQ_IAQ_241201 ;
+    brick:hasAssociatedTag tag:Sensor,
+        tag:Temperature,
+        tag:IAQ .
+	
+bldg:SG_HQ_co2_sensor_241201 a brick:CO2_Level_Sensor ;
+    brick:rname "SGHQ_co2_sensor_241201";
+    brick:hasUnit unit:PPM ;
+	brick:value 513;
+    brick:isPointOf bldg:SG_HQ_IAQ_241201 ;
+    brick:hasAssociatedTag tag:Sensor,
+        tag:CO2,
+        tag:IAQ .
+	
+bldg:SG_HQ_IAQ_241201 a brick:Indoor_Air_Quality_Device ;
+    brick:rname "SGHQ_IAQ_241201";
+    brick:isPartOf bldg:SG_HQ_Room_L2_412 ;
+    brick:coordinates bldg:SG_HQ_IAQ_241201_Coordinate .
+bldg:SG_HQ_IAQ_241201_Coordinate a brick:coordinates ;
+    brick:latitude 1.26572456;
+    brick:longitude 103.8187432 .
 
 # Outside Lighting
 
