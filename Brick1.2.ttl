@@ -19699,7 +19699,7 @@ bldg:SG_HQ_Lamp_1024 a brick:Smart_Luminaire ;
     brick:hasPoint bldg:SG_HQ_Lamp_1024_Motion_Sensor;
     brick:coordinates bldg:SG_HQ_Lamp_1024_Coordinate ;
     brick:next  bldg:SG_HQ_Lamp_1025 ;
-    brick:next  bldg:SG_HQ_Lamp_1711 ;    
+    # brick:next  bldg:SG_HQ_Lamp_1711 ;    
     brick:rname "SGHQLP_1024" ;    
     brick:isPartOf bldg:SG_HQ_Outdoor_Area . 
 bldg:SG_HQ_Lamp_1025 a brick:Smart_Luminaire ;
