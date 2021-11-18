@@ -19280,6 +19280,7 @@ bldg:SG_HQ_VAV1_1.DPR a brick:Damper ;
 	brick:feeds bldg:SG_HQ_VAV1_1Zone ;
     brick:hasPoint bldg:SG_HQ_VAV1_1.DPRPOS .
 
+
 bldg:SG_HQ_VAV1_1.DPRPOS a brick:Damper_Position_Sensor  ;
     brick:rname "SGHQ_VAV1_1.DPRPOS";
 	brick:value 100 .
